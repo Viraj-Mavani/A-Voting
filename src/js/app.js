@@ -27,13 +27,16 @@ App = {
       // Connect provider to interact with contract
       App.contracts.Election.setProvider(App.web3Provider);
 
-      App.listenForEvents();
+      // App.listenForEvents();
 
       return App.render();
     });
   },
 
   listenForEvents: function() {
+
+    //Try Arrow Function
+
     App.contracts.Election.deployed().then(function(instance) {
       instance.votedEvent({}, {
         fromBlock: 0,
